@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>CKEditor</title>
+    <style>
+     .ck-editor__editable { height: 400px; }        <!-- 작성란 박스 크기 조절 -->
+     .ck-content { font-size: 12px; }
+    </style>
+</head>
+<body>
+<h1>CKEditor</h1>
+<form action="" method="POST">
+    <!--<textarea name="text" id="ckeditor1"></textarea>-->
+    <div id="ckeditor2"></div>
+    <p><input type="button" value="전송" onclick="onSend()"></p>
+    <p><input type="button" value="test1" onclick="onTest1()"></p>
+    <p><input type="button" value="test2" onclick="onTest2()"></p>
+</form>
+<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+<script>
+      //ClassicEditor.create( document.querySelector( '#ckeditor1' ) );
+</script>
+<script>
+ClassicEditor.create( document.querySelector( '#ckeditor2' ) )
+.then( editor => {
+        console.log( "--- : " + editor );
+        window.editor = editor;
+ } )
+.catch( error => {
+  console.error( error );
+} );
+
+function onSend() {
+    //alert(window.editor);
+    window.editor.setData( '<p>Some text.</p>' );
+}
+
+function onTest1() {
+    alert(window.editor.getData());
+}
+
+function onTest2() {
+    alert(window.editor.getData());
+}
+</script>
+</body>
+</html>
