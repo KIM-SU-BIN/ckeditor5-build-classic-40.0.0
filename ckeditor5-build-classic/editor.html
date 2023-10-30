@@ -18,11 +18,13 @@
     <p><input type="button" value="test2" onclick="onTest2()"></p>
 </form>
 <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+<script src="https://cdn.ckbox.io/ckbox/2.1.2/ckbox.js"></script>
 <script>
       //ClassicEditor.create( document.querySelector( '#ckeditor1' ) );
 </script>
+
 <script>
-ClassicEditor.create( document.querySelector( '#ckeditor2' ) )
+ClassicEditor.create( document.querySelector( '#ckeditor2'))
 .then( editor => {
         console.log( "--- : " + editor );
         window.editor = editor;
